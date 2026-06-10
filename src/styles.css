@@ -58,8 +58,12 @@ h1 {
 .summary {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, minmax(110px, 1fr));
-  min-width: min(440px, 100%);
+  grid-template-columns: repeat(4, minmax(110px, 1fr));
+  min-width: min(560px, 100%);
+}
+
+.inbox-metric strong {
+  color: #c77b2a;
 }
 
 .metric,
@@ -271,12 +275,153 @@ textarea {
   }
 }
 
+.quick-input {
+  display: flex;
+  gap: 8px;
+}
+
+.quick-input input {
+  flex: 1;
+}
+
+.quick-input .primary {
+  min-width: 48px;
+  padding: 10px 12px;
+}
+
+.inbox-section {
+  background: linear-gradient(135deg, #fff8ec 0%, #fff1d6 100%);
+  border: 1px solid #f0d9a8;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.inbox-header {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.inbox-header h2 {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  gap: 8px;
+  margin: 0;
+}
+
+.inbox-count {
+  background: #f2c36b;
+  border-radius: 999px;
+  color: #3d2d12;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 2px 10px;
+}
+
+.inbox-hint {
+  color: #8a6d3b;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.inbox-list {
+  display: grid;
+  gap: 10px;
+}
+
+.inbox-card {
+  background: white;
+  border: 1px solid #e8d5b0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(180, 130, 50, 0.08);
+  padding: 14px;
+}
+
+.inbox-card-header {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.inbox-card-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.inbox-time {
+  color: #9c8a6a;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.inbox-form {
+  display: grid;
+  gap: 10px;
+}
+
+.inbox-form-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.inbox-form label {
+  color: #6b5a3e;
+  font-size: 0.82rem;
+}
+
+.inbox-form input,
+.inbox-form select,
+.inbox-form textarea {
+  background: #fffdf7;
+  border-color: #e0d0ac;
+}
+
+.inbox-form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+@media (max-width: 980px) {
+  .topbar,
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: auto;
+  }
+
+  .inbox-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 620px) {
   .app-shell {
     padding: 16px;
   }
 
   .summary {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inbox-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 }
