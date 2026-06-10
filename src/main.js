@@ -41,7 +41,14 @@ const app = document.querySelector("#app");
 
 function loadState() {
   const saved = localStorage.getItem(STORAGE_KEY);
-  return saved ? JSON.parse(saved) : initialState;
+  if (!saved) return { ...initialState };
+  const parsed = JSON.parse(saved);
+  return {
+    selectedProject: parsed.selectedProject ?? initialState.selectedProject,
+    projects: parsed.projects ?? initialState.projects,
+    tasks: parsed.tasks ?? initialState.tasks,
+    inboxTasks: parsed.inboxTasks ?? []
+  };
 }
 
 function saveState() {
